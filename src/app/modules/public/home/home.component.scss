@@ -1,0 +1,43 @@
+h1{
+    color: var(--secondary-color);
+}
+p{
+    color: var(--green-color);
+}
+.card-text{
+    color: var(--green-color);
+    font-size: 15px;
+}
+form{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    button{
+        width: 250px;
+    }
+}
+
+
+/*========================= RESPONSIVE ============================*/
+@media (min-width: 769px) and (max-width: 992px) {
+    form{
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    p{
+        width: 100% !important;
+    }
+    .row-top{
+        padding: 20px 0px 10px !important;
+    }
+    form{
+        flex-direction: column;
+        width: 100% !important;
+        button{
+            width: 100%;
+        }
+    }
+    
+}

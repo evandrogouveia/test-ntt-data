@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+:root {
+    --primary-color: #2b9974;
+    --primary-color-hover: var(--secondary-color);
+
+    --secondary-color: #3f3d56;
+    --yellow-color: #f7c000;
+    --white-color: #ffffff;
+    --green-color: #747474;
+   
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+input.form-control{
+    
+    &:focus{
+        box-shadow: none;
+        outline: none;
+        border: 1px solid var(--primary-color);
+    }
+}
+.btn{
+    &.btn-primary{
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        &:hover{
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+    }
+}
+.bs-rating-star {
+    font-size: 20px;
+    &.active{
+        color: var(--yellow-color)
+    }
+}
+

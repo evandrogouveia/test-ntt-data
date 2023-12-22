@@ -1,0 +1,16 @@
+<section class="container">
+  <div class="row-top text-center p-4">
+    <h1>Movies Repository</h1>
+    <p class="w-50 m-auto">Here you can find several action, drama, fiction, horror films, among others.
+      Search for the film you want below and quickly find what you are looking for.</p>
+
+    <form class="w-75 mt-5 mb-5 m-auto">
+      <input type="text" class="form-control" [(ngModel)]="search" [ngModelOptions]="{standalone: true}">
+      <button type="submit" class="btn btn-primary" (click)="changeSearch()">Search</button>
+      <button type="button" class="btn btn-primary" (click)="changeReset()">Reset</button>
+    </form>
+  </div>
+
+  <app-card [data]="(movies$ | async)?.data"></app-card>
+
+</section>

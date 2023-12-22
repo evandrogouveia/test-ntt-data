@@ -1,0 +1,33 @@
+<div class="card">
+    <ng-container *ngIf="data.Title; else emptyData">
+        <div #card class="row g-0" [id]="data.imdbID">
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{data.Title}}</h5>
+                    <p class="card-text mb-5">{{data.Plot}}</p>
+                    <p class="card-text mb-0"><strong>Actor:</strong> {{data.Actors}}</p>
+                    <p class="card-text">
+                        <strong>Review: </strong>
+                        <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
+                    </p>
+                    <button type="button" class="btn btn-primary mt-5 mb-5" (click)="changeFavorite(card.id)"
+                        [ngClass]="{'favorited': favorite}">Favorite
+                        <span class="material-symbols-outlined" [ngClass]="{'favorited': favorite}">
+                            favorite
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <img [src]="data.Poster" class="img-card rounded-end float-end" alt="...">
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #emptyData>
+        <div class="wrap-empty">
+            <h2>The searched films will appear in this section</h2>
+            <img class="w-50 m-auto mt-5 mb-5" src="assets/imgs/search.svg" alt="image-search">
+        </div>
+    </ng-template>
+</div>
